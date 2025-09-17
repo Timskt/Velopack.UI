@@ -34,7 +34,7 @@ jobs:
     # ✅ 修复：进入项目目录再执行 dotnet test
     - name: Execute unit tests 🧪
       working-directory: ${{ env.Project_Path }}
-      run: dotnet test --no-build --configuration ${{ matrix.configuration }}
+      run: dotnet test ${{ env.Project_File }} --no-build --configuration ${{ matrix.configuration }}
 
     # ✅ 修复：使用 dotnet build 而不是 msbuild + .sln
     - name: Build 🛠️
