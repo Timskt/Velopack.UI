@@ -39,7 +39,7 @@ jobs:
     # ✅ 修复：使用 dotnet build 而不是 msbuild + .sln
     - name: Build 🛠️
       working-directory: ${{ env.Project_Path }}
-      run: dotnet build --configuration ${{ matrix.configuration }} --no-restore
+      run: dotnet build ${{ env.Project_File }} --configuration ${{ matrix.configuration }} --no-restore
 
     # ✅ 发布为独立可执行文件（win-x64）
     - name: Publish 📦
